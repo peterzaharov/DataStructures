@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LinkedList.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,44 +11,47 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            var list = new Model.LinkedList<int>();
-            list.Add(1);
-            list.Add(2);
-            list.Add(3);
-            list.Add(4);
-            list.Add(5);
+            var easuStack = new EasyStack<int>();
 
-            foreach (var item in list)
-            {
-                Console.Write(item + " ");
-            }
+            easuStack.Push(1);
+            easuStack.Push(2);
+            easuStack.Push(3);
+
+            var item = easuStack.Pop();
+            var item2 = easuStack.Peek();
+
+            Console.WriteLine(item);
+            Console.WriteLine(item2);
+
             Console.WriteLine();
 
-            list.Delete(3);
-            list.Delete(1);
-            list.Delete(7);
+            var linkedStack = new LinkedStack<int>();
 
-            foreach (var item in list)
-            {
-                Console.Write(item + " ");
-            }
+            linkedStack.Push(10);
+            linkedStack.Push(20);
+            linkedStack.Push(30);
+            linkedStack.Push(40);
+            linkedStack.Push(50);
+
+            Console.WriteLine(linkedStack.Peek());
+            Console.WriteLine(linkedStack.Pop());
+            Console.WriteLine(linkedStack.Pop());
+            Console.WriteLine(linkedStack.Peek());
+
             Console.WriteLine();
 
-            list.AppendHead(7);
+            var arrayStack = new ArrayStack<int>(5);
 
-            foreach (var item in list)
-            {
-                Console.Write(item + " ");
-            }
-            Console.WriteLine();
+            arrayStack.Push(100);
+            arrayStack.Push(200);
+            arrayStack.Push(300);
+            arrayStack.Push(400);
+            arrayStack.Push(500);
 
-            list.InsertAfter(4, 8);
-
-            foreach (var item in list)
-            {
-                Console.Write(item + " ");
-            }
-            Console.WriteLine();
+            Console.WriteLine(arrayStack.Peek());
+            Console.WriteLine(arrayStack.Pop());
+            Console.WriteLine(arrayStack.Pop());
+            Console.WriteLine(arrayStack.Peek());
 
             Console.ReadLine();
         }
