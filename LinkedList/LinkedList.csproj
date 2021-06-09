@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\ArrayStack.cs" />
+    <Compile Include="Model\CircularLinkedList.cs" />
+    <Compile Include="Model\DuplexItem.cs" />
+    <Compile Include="Model\DuplexLinkedList.cs" />
     <Compile Include="Model\EasyStack.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemStack.cs" />

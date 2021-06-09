@@ -1,9 +1,5 @@
 ﻿using LinkedList.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -11,47 +7,54 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            var easuStack = new EasyStack<int>();
-
-            easuStack.Push(1);
-            easuStack.Push(2);
-            easuStack.Push(3);
-
-            var item = easuStack.Pop();
-            var item2 = easuStack.Peek();
-
-            Console.WriteLine(item);
-            Console.WriteLine(item2);
-
-            Console.WriteLine();
-
-            var linkedStack = new LinkedStack<int>();
-
-            linkedStack.Push(10);
-            linkedStack.Push(20);
-            linkedStack.Push(30);
-            linkedStack.Push(40);
-            linkedStack.Push(50);
-
-            Console.WriteLine(linkedStack.Peek());
-            Console.WriteLine(linkedStack.Pop());
-            Console.WriteLine(linkedStack.Pop());
-            Console.WriteLine(linkedStack.Peek());
+            var circularLinkedList = new CircularLinkedList<int>();
+            circularLinkedList.Add(1);
+            circularLinkedList.Add(2);
+            circularLinkedList.Add(3);
+            circularLinkedList.Add(4);
+            circularLinkedList.Add(5);
+            foreach(var item in circularLinkedList)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.WriteLine();
 
-            var arrayStack = new ArrayStack<int>(5);
+            circularLinkedList.Delete(3);
+            foreach (var item in circularLinkedList)
+            {
+                Console.WriteLine(item);
+            }
 
-            arrayStack.Push(100);
-            arrayStack.Push(200);
-            arrayStack.Push(300);
-            arrayStack.Push(400);
-            arrayStack.Push(500);
+            Console.WriteLine();
 
-            Console.WriteLine(arrayStack.Peek());
-            Console.WriteLine(arrayStack.Pop());
-            Console.WriteLine(arrayStack.Pop());
-            Console.WriteLine(arrayStack.Peek());
+            var duplexLinkedList = new DuplexLinkedList<int>();
+            duplexLinkedList.Add(1);
+            duplexLinkedList.Add(2);
+            duplexLinkedList.Add(3);
+            duplexLinkedList.Add(4);
+            duplexLinkedList.Add(5);
+
+            foreach(var item in duplexLinkedList)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+
+            duplexLinkedList.Delete(3);
+            foreach (var item in duplexLinkedList)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+
+            var reverse = duplexLinkedList.Reverse();
+            foreach (var item in reverse)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.ReadLine();
         }
