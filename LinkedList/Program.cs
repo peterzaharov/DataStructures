@@ -7,54 +7,88 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            var circularLinkedList = new CircularLinkedList<int>();
-            circularLinkedList.Add(1);
-            circularLinkedList.Add(2);
-            circularLinkedList.Add(3);
-            circularLinkedList.Add(4);
-            circularLinkedList.Add(5);
-            foreach(var item in circularLinkedList)
             {
-                Console.WriteLine(item);
+                var duplexLinkedDeque = new DuplexLinkedDeque<int>();
+                duplexLinkedDeque.PushFront(1);
+                duplexLinkedDeque.PushFront(2);
+                duplexLinkedDeque.PushFront(3);
+                duplexLinkedDeque.PushBack(4);
+                duplexLinkedDeque.PushBack(5);
+                
+                Console.WriteLine(duplexLinkedDeque.PopFront());
+                Console.WriteLine(duplexLinkedDeque.PopFront());
+                Console.WriteLine(duplexLinkedDeque.PopBack());
+                Console.WriteLine(duplexLinkedDeque.PopBack());
+                Console.WriteLine(duplexLinkedDeque.PopFront());
             }
 
             Console.WriteLine();
 
-            circularLinkedList.Delete(3);
-            foreach (var item in circularLinkedList)
             {
-                Console.WriteLine(item);
+                var easyDeque = new EasyDeque<int>();
+                easyDeque.PushFront(1);
+                easyDeque.PushFront(2);
+                easyDeque.PushFront(3);
+                easyDeque.PushBack(40);
+                easyDeque.PushBack(50);
+                easyDeque.PushFront(600);
+                easyDeque.PushBack(700);
+
+
+
+                Console.WriteLine(easyDeque.PopFront());
+                Console.WriteLine(easyDeque.PopBack());
+                Console.WriteLine(easyDeque.PopFront());
+                Console.WriteLine(easyDeque.PopBack());
             }
 
             Console.WriteLine();
 
-            var duplexLinkedList = new DuplexLinkedList<int>();
-            duplexLinkedList.Add(1);
-            duplexLinkedList.Add(2);
-            duplexLinkedList.Add(3);
-            duplexLinkedList.Add(4);
-            duplexLinkedList.Add(5);
-
-            foreach(var item in duplexLinkedList)
             {
-                Console.WriteLine(item);
+                var linkedQueue = new LinkedQueue<int>();
+                linkedQueue.Enqueue(1);
+                linkedQueue.Enqueue(2);
+                linkedQueue.Enqueue(3);
+                linkedQueue.Enqueue(4);
+                linkedQueue.Enqueue(5);
+
+                Console.WriteLine(linkedQueue.Dequeue());
+                Console.WriteLine(linkedQueue.Peek());
+                Console.WriteLine(linkedQueue.Dequeue());
+                Console.WriteLine(linkedQueue.Dequeue());
+                Console.WriteLine(linkedQueue.Dequeue());
             }
 
             Console.WriteLine();
+            
+            var easyQueue = new EasyQueue<int>();
+            easyQueue.Enqueue(1);
+            easyQueue.Enqueue(2);
+            easyQueue.Enqueue(3);
+            easyQueue.Enqueue(4);
+            easyQueue.Enqueue(5);
 
-            duplexLinkedList.Delete(3);
-            foreach (var item in duplexLinkedList)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine(easyQueue.Dequeue());
+            Console.WriteLine(easyQueue.Peek());
+            Console.WriteLine(easyQueue.Dequeue());
 
             Console.WriteLine();
 
-            var reverse = duplexLinkedList.Reverse();
-            foreach (var item in reverse)
-            {
-                Console.WriteLine(item);
-            }
+            var arrayQueue = new ArrayQueue<int>(5);
+            arrayQueue.Enqueue(1);
+            arrayQueue.Enqueue(2);
+            arrayQueue.Enqueue(3);
+            arrayQueue.Enqueue(4);
+            arrayQueue.Enqueue(5);
+
+            Console.WriteLine(arrayQueue.Dequeue());
+            Console.WriteLine(arrayQueue.Peek());
+            Console.WriteLine(arrayQueue.Dequeue());
+            Console.WriteLine(arrayQueue.Dequeue());
+            Console.WriteLine(arrayQueue.Dequeue());
+            Console.WriteLine(arrayQueue.Dequeue());
+            Console.WriteLine(arrayQueue.Dequeue());
+            Console.WriteLine(arrayQueue.Dequeue());
 
             Console.ReadLine();
         }
