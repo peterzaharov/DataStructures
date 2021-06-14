@@ -1,4 +1,5 @@
 ﻿using LinkedList.Model;
+using LinkedList.Model.Set;
 using System;
 
 namespace LinkedList
@@ -8,87 +9,57 @@ namespace LinkedList
         static void Main(string[] args)
         {
             {
-                var duplexLinkedDeque = new DuplexLinkedDeque<int>();
-                duplexLinkedDeque.PushFront(1);
-                duplexLinkedDeque.PushFront(2);
-                duplexLinkedDeque.PushFront(3);
-                duplexLinkedDeque.PushBack(4);
-                duplexLinkedDeque.PushBack(5);
+                var easySet1 = new EasySet<int>(new int[] { 1, 2, 3, 4, 5 });
+                var easySet2 = new EasySet<int>(new int[] { 4, 5, 6, 7, 8 });
+                var easySet3 = new EasySet<int>(new int[] {3, 4, 5 });
+
+                Console.Write("Union: ");
+                foreach(var item in easySet1.Union(easySet2))
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+
+                Console.Write("Intersection: ");
+                foreach (var item in easySet1.Intersection(easySet2))
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+
+                Console.Write("Difference A \\ B: ");
+                foreach (var item in easySet1.Difference(easySet2))
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+
+                Console.Write("Difference B \\ A: ");
+                foreach (var item in easySet2.Difference(easySet1))
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+
+                Console.Write("A Subset C: ");
+                Console.Write(easySet1.SubSet(easySet3));
+                Console.WriteLine();
+
+                Console.Write("C Subset A: ");
+                Console.Write(easySet3.SubSet(easySet1));
+                Console.WriteLine();
+
+                Console.Write("C Subset B: ");
+                Console.Write(easySet3.SubSet(easySet2));
+                Console.WriteLine();
                 
-                Console.WriteLine(duplexLinkedDeque.PopFront());
-                Console.WriteLine(duplexLinkedDeque.PopFront());
-                Console.WriteLine(duplexLinkedDeque.PopBack());
-                Console.WriteLine(duplexLinkedDeque.PopBack());
-                Console.WriteLine(duplexLinkedDeque.PopFront());
+                Console.Write("SymmetricDifference: ");
+                foreach (var item in easySet1.SymmetricDifference(easySet2))
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
             }
-
-            Console.WriteLine();
-
-            {
-                var easyDeque = new EasyDeque<int>();
-                easyDeque.PushFront(1);
-                easyDeque.PushFront(2);
-                easyDeque.PushFront(3);
-                easyDeque.PushBack(40);
-                easyDeque.PushBack(50);
-                easyDeque.PushFront(600);
-                easyDeque.PushBack(700);
-
-
-
-                Console.WriteLine(easyDeque.PopFront());
-                Console.WriteLine(easyDeque.PopBack());
-                Console.WriteLine(easyDeque.PopFront());
-                Console.WriteLine(easyDeque.PopBack());
-            }
-
-            Console.WriteLine();
-
-            {
-                var linkedQueue = new LinkedQueue<int>();
-                linkedQueue.Enqueue(1);
-                linkedQueue.Enqueue(2);
-                linkedQueue.Enqueue(3);
-                linkedQueue.Enqueue(4);
-                linkedQueue.Enqueue(5);
-
-                Console.WriteLine(linkedQueue.Dequeue());
-                Console.WriteLine(linkedQueue.Peek());
-                Console.WriteLine(linkedQueue.Dequeue());
-                Console.WriteLine(linkedQueue.Dequeue());
-                Console.WriteLine(linkedQueue.Dequeue());
-            }
-
-            Console.WriteLine();
-            
-            var easyQueue = new EasyQueue<int>();
-            easyQueue.Enqueue(1);
-            easyQueue.Enqueue(2);
-            easyQueue.Enqueue(3);
-            easyQueue.Enqueue(4);
-            easyQueue.Enqueue(5);
-
-            Console.WriteLine(easyQueue.Dequeue());
-            Console.WriteLine(easyQueue.Peek());
-            Console.WriteLine(easyQueue.Dequeue());
-
-            Console.WriteLine();
-
-            var arrayQueue = new ArrayQueue<int>(5);
-            arrayQueue.Enqueue(1);
-            arrayQueue.Enqueue(2);
-            arrayQueue.Enqueue(3);
-            arrayQueue.Enqueue(4);
-            arrayQueue.Enqueue(5);
-
-            Console.WriteLine(arrayQueue.Dequeue());
-            Console.WriteLine(arrayQueue.Peek());
-            Console.WriteLine(arrayQueue.Dequeue());
-            Console.WriteLine(arrayQueue.Dequeue());
-            Console.WriteLine(arrayQueue.Dequeue());
-            Console.WriteLine(arrayQueue.Dequeue());
-            Console.WriteLine(arrayQueue.Dequeue());
-            Console.WriteLine(arrayQueue.Dequeue());
 
             Console.ReadLine();
         }

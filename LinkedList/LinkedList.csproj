@@ -43,22 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\ArrayQueue.cs" />
-    <Compile Include="Model\ArrayStack.cs" />
-    <Compile Include="Model\CircularLinkedList.cs" />
-    <Compile Include="Model\DuplexItem.cs" />
-    <Compile Include="Model\DuplexLinkedDeque.cs" />
-    <Compile Include="Model\DuplexLinkedList.cs" />
-    <Compile Include="Model\EasyDeque.cs" />
-    <Compile Include="Model\EasyQueue.cs" />
-    <Compile Include="Model\EasyStack.cs" />
-    <Compile Include="Model\Item.cs" />
-    <Compile Include="Model\ItemStack.cs" />
-    <Compile Include="Model\LinkedList.cs" />
-    <Compile Include="Model\LinkedQueue.cs" />
-    <Compile Include="Model\LinkedQueueItem.cs" />
-    <Compile Include="Model\LinkedStack.cs" />
-    <Compile Include="Model\QueueDuplexItem.cs" />
+    <Compile Include="Model\Queue\ArrayQueue.cs" />
+    <Compile Include="Model\Stack\ArrayStack.cs" />
+    <Compile Include="Model\List\CircularLinkedList.cs" />
+    <Compile Include="Model\List\DuplexItem.cs" />
+    <Compile Include="Model\Queue\DuplexLinkedDeque.cs" />
+    <Compile Include="Model\List\DuplexLinkedList.cs" />
+    <Compile Include="Model\Queue\EasyDeque.cs" />
+    <Compile Include="Model\Queue\EasyQueue.cs" />
+    <Compile Include="Model\Stack\EasyStack.cs" />
+    <Compile Include="Model\List\Item.cs" />
+    <Compile Include="Model\Stack\ItemStack.cs" />
+    <Compile Include="Model\List\LinkedList.cs" />
+    <Compile Include="Model\Queue\LinkedQueue.cs" />
+    <Compile Include="Model\Queue\LinkedQueueItem.cs" />
+    <Compile Include="Model\Stack\LinkedStack.cs" />
+    <Compile Include="Model\Queue\QueueDuplexItem.cs" />
+    <Compile Include="Model\Set\EasySet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
