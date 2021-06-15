@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\HashTable\BadHashTable.cs" />
+    <Compile Include="Model\HashTable\HashTable.cs" />
+    <Compile Include="Model\HashTable\HashTableItem.cs" />
+    <Compile Include="Model\HashTable\Person.cs" />
+    <Compile Include="Model\HashTable\SuperHashTable.cs" />
     <Compile Include="Model\Queue\ArrayQueue.cs" />
     <Compile Include="Model\Stack\ArrayStack.cs" />
     <Compile Include="Model\List\CircularLinkedList.cs" />

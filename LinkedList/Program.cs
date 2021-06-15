@@ -1,4 +1,4 @@
-﻿using LinkedList.Model;
+﻿using LinkedList.Model.HashTable;
 using LinkedList.Model.Set;
 using System;
 
@@ -8,6 +8,45 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
+            {
+                var superHashTable = new SuperHashTable<Person>(100);
+                var person = new Person() { Name = "Вася", Age = 25, Gender = 0 };
+                superHashTable.Add(new Person() { Name = "Петя", Age = 35, Gender = 0 });
+                superHashTable.Add(new Person() { Name = "Андрей", Age = 15, Gender = 0 });
+                superHashTable.Add(new Person() { Name = "Катя", Age = 15, Gender = 1 });
+                superHashTable.Add(person);
+
+                Console.WriteLine(superHashTable.Search(new Person() { Name = "Вася", Age = 25, Gender = 0 }));
+                Console.WriteLine(superHashTable.Search(person));
+            }
+
+            Console.WriteLine();
+
+            {
+                var hashTable = new HashTable<int, string>(100);
+                hashTable.Add(5, "Привет");
+                hashTable.Add(18, "Мир");
+                hashTable.Add(777, "Здравствуй");
+                hashTable.Add(7, "Программист");
+
+                Console.WriteLine(hashTable.Search(6, "Вася"));
+                Console.WriteLine(hashTable.Search(18, "Мир"));
+            }
+
+            Console.WriteLine();
+
+            {
+                var badHashTable = new BadHashTable<int>(100);
+                badHashTable.Add(5);
+                badHashTable.Add(18);
+                badHashTable.Add(777);
+
+                Console.WriteLine(badHashTable.Search(6));
+                Console.WriteLine(badHashTable.Search(18));
+            }
+
+            Console.WriteLine();
+
             {
                 var easySet1 = new EasySet<int>(new int[] { 1, 2, 3, 4, 5 });
                 var easySet2 = new EasySet<int>(new int[] { 4, 5, 6, 7, 8 });
