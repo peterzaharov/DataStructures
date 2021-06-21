@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList.Model.Map
 {
     public class EasyMap<TKey, TValue> : IEnumerable
     {
-        private List<EasyMapItem<TKey, TValue>> Items = new List<EasyMapItem<TKey, TValue>>();
+        private List<MapItem<TKey, TValue>> Items = new List<MapItem<TKey, TValue>>();
         private List<TKey> Keys = new List<TKey>();
 
         public int Count => Items.Count;
         public EasyMap() { }
-        public void Add(EasyMapItem<TKey, TValue> item)
+        public void Add(MapItem<TKey, TValue> item)
         {
             if (!Keys.Contains(item.Key))
             {

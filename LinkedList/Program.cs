@@ -10,12 +10,41 @@ namespace LinkedList
         static void Main(string[] args)
         {
             {
+                var dict = new Dict<int, string>();
+                dict.Add(new MapItem<int, string>(1, "Один"));
+                dict.Add(new MapItem<int, string>(1, "Один"));
+                dict.Add(new MapItem<int, string>(2, "Два"));
+                dict.Add(new MapItem<int, string>(3, "Три"));
+                dict.Add(new MapItem<int, string>(4, "Четыре"));
+                dict.Add(new MapItem<int, string>(5, "Пять"));
+                dict.Add(new MapItem<int, string>(101, "Сто один"));
+
+                foreach (var item in dict)
+                {
+                    Console.WriteLine(item);
+                }
+
+                Console.WriteLine(dict.Search(7) ?? "Не найдено");
+                Console.WriteLine(dict.Search(3) ?? "Не найдено");
+
+                dict.Remove(3);
+                dict.Remove(1);
+
+                foreach (var item in dict)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+
+            Console.WriteLine();
+
+            {
                 var easyMap = new EasyMap<int, string>();
-                easyMap.Add(new EasyMapItem<int, string>(1, "Один"));
-                easyMap.Add(new EasyMapItem<int, string>(2, "Два"));
-                easyMap.Add(new EasyMapItem<int, string>(3, "Три"));
-                easyMap.Add(new EasyMapItem<int, string>(4, "Четыре"));
-                easyMap.Add(new EasyMapItem<int, string>(5, "Пять"));
+                easyMap.Add(new MapItem<int, string>(1, "Один"));
+                easyMap.Add(new MapItem<int, string>(2, "Два"));
+                easyMap.Add(new MapItem<int, string>(3, "Три"));
+                easyMap.Add(new MapItem<int, string>(4, "Четыре"));
+                easyMap.Add(new MapItem<int, string>(5, "Пять"));
 
                 foreach (var item in easyMap)
                 {

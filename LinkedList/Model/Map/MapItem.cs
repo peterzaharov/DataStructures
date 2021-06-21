@@ -1,10 +1,10 @@
 ﻿namespace LinkedList.Model.Map
 {
-    public class EasyMapItem<TKey, TValue>
+    public class MapItem<TKey, TValue>
     {
         public TKey Key { get; set; }
         public TValue Value { get; set; }
-        public EasyMapItem(TKey key, TValue value)
+        public MapItem(TKey key, TValue value)
         {
             Key = key;
             Value = value;

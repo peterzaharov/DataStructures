@@ -48,8 +48,9 @@
     <Compile Include="Model\HashTable\HashTableItem.cs" />
     <Compile Include="Model\HashTable\Person.cs" />
     <Compile Include="Model\HashTable\SuperHashTable.cs" />
+    <Compile Include="Model\Map\Dict.cs" />
     <Compile Include="Model\Map\EasyMap.cs" />
-    <Compile Include="Model\Map\EasyMapItem.cs" />
+    <Compile Include="Model\Map\MapItem.cs" />
     <Compile Include="Model\Queue\ArrayQueue.cs" />
     <Compile Include="Model\Stack\ArrayStack.cs" />
     <Compile Include="Model\List\CircularLinkedList.cs" />
