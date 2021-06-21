@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace LinkedList.Model.Map
 {
@@ -7,6 +8,7 @@ namespace LinkedList.Model.Map
     {
         private int size = 100;
         private MapItem<TKey, TValue>[] Items;
+        private List<TKey> Keys = new List<TKey>();
         public Dict()
         {
             Items = new MapItem<TKey, TValue>[size];
@@ -15,8 +17,14 @@ namespace LinkedList.Model.Map
         {
             var hash = GetHash(item.Key);
 
+            if (Keys.Contains(item.Key))
+            {
+                return;
+            }
+
             if (Items[hash] == null)
             {
+                Keys.Add(item.Key);
                 Items[hash] = item;
             }
             else
@@ -26,6 +34,7 @@ namespace LinkedList.Model.Map
                 {
                     if (Items[i] == null)
                     {
+                        Keys.Add(item.Key);
                         Items[i] = item;
                         placed = true;
                         break;
@@ -43,6 +52,7 @@ namespace LinkedList.Model.Map
                     {
                         if (Items[i] == null)
                         {
+                            Keys.Add(item.Key);
                             Items[i] = item;
                             placed = true;
                             break;
@@ -76,15 +86,31 @@ namespace LinkedList.Model.Map
         public void Remove(TKey key)
         {
             var hash = GetHash(key);
+
+            if (!Keys.Contains(key))
+            {
+                return;
+            }
             
             if (Items[hash] == null)
             {
+                for (int i = 0; i < size; i++)
+                {
+                    if (Items[i] != null && Items[i].Key.Equals(key))
+                    {
+                        Items[i] = null;
+                        Keys.Remove(key);
+                        return;
+                    }
+                }
+
                 return;
             }
 
             if (Items[hash].Key.Equals(key))
             {
                 Items[hash] = null;
+                Keys.Remove(key);
             }
             else
             {
@@ -99,6 +125,7 @@ namespace LinkedList.Model.Map
                     if (Items[i].Key.Equals(key))
                     {
                         Items[i] = null;
+                        Keys.Remove(key);
                         return;
                     }
                 }
@@ -115,6 +142,7 @@ namespace LinkedList.Model.Map
                         if (Items[i].Key.Equals(key))
                         {
                             Items[i] = null;
+                            Keys.Remove(key);
                             return;
                         }
                     }
@@ -125,8 +153,21 @@ namespace LinkedList.Model.Map
         {
             var hash = GetHash(key);
 
+            if (!Keys.Contains(key))
+            {
+                return default(TValue);
+            }
+
             if (Items[hash] == null)
             {
+                foreach (var item in Items)
+                {
+                    if (item.Key.Equals(key))
+                    {
+                        return item.Value;
+                    }
+                }
+
                 return default(TValue);
             }
 
