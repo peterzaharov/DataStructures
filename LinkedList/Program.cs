@@ -1,4 +1,5 @@
-﻿using LinkedList.Model.HashTable;
+﻿using LinkedList.Model.BinarySearchTree;
+using LinkedList.Model.HashTable;
 using LinkedList.Model.Map;
 using LinkedList.Model.Set;
 using System;
@@ -9,6 +10,39 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
+            {
+                var tree = new Tree<int>();
+                tree.Add(5);
+                tree.Add(3);
+                tree.Add(7);
+                tree.Add(1);
+                tree.Add(2);
+                tree.Add(8);
+                tree.Add(6);
+                tree.Add(9);
+
+                foreach (var item in tree.Preorder())
+                {
+                    Console.Write(item + ", ");
+                }
+
+                Console.WriteLine();
+
+                foreach (var item in tree.Postorder())
+                {
+                    Console.Write(item + ", ");
+                }
+
+                Console.WriteLine();
+
+                foreach (var item in tree.Inorder())
+                {
+                    Console.Write(item + ", ");
+                }
+            }
+
+            Console.WriteLine();
+
             {
                 var dict = new Dict<int, string>();
                 dict.Add(new MapItem<int, string>(1, "Один"));
