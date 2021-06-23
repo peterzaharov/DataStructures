@@ -70,11 +70,14 @@
     <Compile Include="Model\Stack\LinkedStack.cs" />
     <Compile Include="Model\Queue\QueueDuplexItem.cs" />
     <Compile Include="Model\Set\EasySet.cs" />
+    <Compile Include="Model\Trie\TrieNode.cs" />
+    <Compile Include="Model\Trie\Trie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,6 +2,7 @@
 using LinkedList.Model.HashTable;
 using LinkedList.Model.Map;
 using LinkedList.Model.Set;
+using LinkedList.Model.Trie;
 using System;
 
 namespace LinkedList
@@ -10,6 +11,12 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
+            {
+                var trie = new Trie<int>();
+                trie.Add("привет", 50);
+                trie.Add("мир", 100);
+                trie.Add("приз", 200);
+            }
             {
                 var tree = new Tree<int>();
                 tree.Add(5);
