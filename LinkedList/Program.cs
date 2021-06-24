@@ -1,9 +1,10 @@
 ﻿using LinkedList.Model.BinarySearchTree;
 using LinkedList.Model.HashTable;
+using LinkedList.Model.Heap;
 using LinkedList.Model.Map;
 using LinkedList.Model.Set;
-using LinkedList.Model.Trie;
 using System;
+using System.Collections.Generic;
 
 namespace LinkedList
 {
@@ -12,11 +13,28 @@ namespace LinkedList
         static void Main(string[] args)
         {
             {
-                var trie = new Trie<int>();
-                trie.Add("привет", 50);
-                trie.Add("мир", 100);
-                trie.Add("приз", 200);
+                var rnd = new Random();
+                var startItems = new List<int>();
+
+                for (int i = 0; i < 10; i++)
+                {
+                    startItems.Add(rnd.Next(-1000, 1000));
+                }
+                var heap = new Heap(startItems);
+
+                for (int i = 0; i < 10; i++)
+                {
+                    heap.Add(rnd.Next(-1000, 1000));
+                }
+
+                foreach (var item in heap)
+                {
+                    Console.WriteLine(item);
+                }
             }
+
+            Console.WriteLine();
+
             {
                 var tree = new Tree<int>();
                 tree.Add(5);

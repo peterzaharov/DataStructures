@@ -50,6 +50,7 @@
     <Compile Include="Model\HashTable\HashTableItem.cs" />
     <Compile Include="Model\HashTable\Person.cs" />
     <Compile Include="Model\HashTable\SuperHashTable.cs" />
+    <Compile Include="Model\Heap\Heap.cs" />
     <Compile Include="Model\Map\Dict.cs" />
     <Compile Include="Model\Map\EasyMap.cs" />
     <Compile Include="Model\Map\MapItem.cs" />
