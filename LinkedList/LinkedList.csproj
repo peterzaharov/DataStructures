@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Model\BinarySearchTree\Node.cs" />
     <Compile Include="Model\BinarySearchTree\Tree.cs" />
+    <Compile Include="Model\Graph\Edge.cs" />
+    <Compile Include="Model\Graph\Graph.cs" />
+    <Compile Include="Model\Graph\Vertex.cs" />
     <Compile Include="Model\HashTable\BadHashTable.cs" />
     <Compile Include="Model\HashTable\HashTable.cs" />
     <Compile Include="Model\HashTable\HashTableItem.cs" />
